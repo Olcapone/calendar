@@ -2,7 +2,7 @@
 import { alpha, styled } from '@mui/material/styles'
 import { AppBar, Toolbar, IconButton } from '@mui/material'
 // components
-import Iconify from '../../components/shared/Iconify'
+import Iconify from 'components/shared/Iconify'
 import { APP_BAR_DESKTOP, APP_BAR_MOBILE, DRAWER_WIDTH } from '../constants'
 
 

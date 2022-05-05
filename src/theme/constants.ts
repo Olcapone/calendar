@@ -1,0 +1,1 @@
+export const FONT_PRIMARY = 'Public Sans, sans-serif'

@@ -9,15 +9,17 @@ const ContentStyle = styled('div')(({ theme }) => ({
   margin: 'auto',
   minHeight: '100vh',
   display: 'flex',
+  alignItems: 'center',
   justifyContent: 'center',
   flexDirection: 'column',
+  textAlign: 'center',
   padding: theme.spacing(12, 0)
 }))
 
 
 const PageNotFound = () => (
       <Container>
-        <ContentStyle sx={{ textAlign: 'center', alignItems: 'center' }}>
+        <ContentStyle>
           <Typography variant="h3" paragraph>
             Sorry, page not found!
           </Typography>

@@ -4,7 +4,9 @@ import { Outlet } from 'react-router-dom'
 import { styled } from '@mui/material/styles'
 //xomponents
 import DashboardNavbar from './DashboardNavbar'
+import DashboardSidebar from './DashboardSidebar'
 import { APP_BAR_MOBILE, APP_BAR_DESKTOP } from '../constants'
+
 
 
 const RootStyle = styled('div')({
@@ -33,6 +35,7 @@ const MainLayout = () => {
   return (
     <RootStyle>
       <DashboardNavbar onOpenSidebar={() => setOpen(true)} />
+      <DashboardSidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
       <MainStyle>
         <Outlet />
       </MainStyle>

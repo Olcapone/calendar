@@ -1,5 +1,6 @@
+import { Theme } from '@mui/material/styles'
 
-const Button = (theme: any) => ({
+const Button = (theme: Theme) => ({
     MuiButton: {
       styleOverrides: {
         root: {
@@ -18,10 +19,10 @@ const Button = (theme: any) => ({
           }
         },
         containedPrimary: {
-          boxShadow: theme.customShadows.primary
+          boxShadow: theme.shadows[7]
         },
         containedSecondary: {
-          boxShadow: theme.customShadows.secondary
+          boxShadow: theme.shadows[7]
         },
         outlinedInherit: {
           border: `1px solid ${theme.palette.grey[500]}`,

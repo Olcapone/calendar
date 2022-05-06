@@ -1,40 +1,21 @@
-import { useMemo } from 'react'
 // material
-import { CssBaseline } from '@mui/material'
-import { ThemeProvider as MUIThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles'
+import { createTheme, responsiveFontSizes } from '@mui/material/styles'
 //components
 import palette from './palette'
 import typography from './typography'
 import componentsOverride from './overrides'
-import { customShadows, shadows } from './shadows'
+import { shadows } from './shadows'
 
-type ThemeProviderProps = {
-  children: React.ReactNode,
-}
 
-const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const themeOptions = useMemo(
-    () => ({
+  const theme = createTheme(
+    {
       palette,
       shape: { borderRadius: 8 },
       typography,
-      shadows,
-      customShadows,
-    }),
-    []
+      shadows, 
+    } 
   )
-
-  const theme = createTheme(themeOptions)
+  
   theme.components = componentsOverride(theme)
 
-  return (
-    <StyledEngineProvider injectFirst>
-      <MUIThemeProvider theme={theme}>
-        <CssBaseline />
-        {children}
-      </MUIThemeProvider>
-    </StyledEngineProvider>
-  )
-}
-
-export default ThemeProvider 
+export default responsiveFontSizes(theme) 

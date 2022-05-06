@@ -1,9 +1,10 @@
+import { Theme } from '@mui/material/styles'
 
-const Autocomplete = (theme: any) => ({
+const Autocomplete = (theme: Theme) => ({
     MuiAutocomplete: {
       styleOverrides: {
         paper: {
-          boxShadow: theme.customShadows.z20
+          boxShadow: theme.shadows[7]
         }
       }
     }

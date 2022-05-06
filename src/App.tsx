@@ -1,10 +1,18 @@
+import { CssBaseline } from '@mui/material'
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles'
+import { BaseOptionChartStyle } from 'components/chart'
 import Router from 'routes'
-import ThemeProvider from './theme'
+import theme from 'theme'
+
 
 const App: React.FC = (): JSX.Element => (
-  <ThemeProvider>
-    <Router />
-  </ThemeProvider>
+  <StyledEngineProvider injectFirst>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <BaseOptionChartStyle />
+      <Router />
+    </ThemeProvider>
+  </StyledEngineProvider>
 )
 
 export default App

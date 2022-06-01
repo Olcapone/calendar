@@ -6,12 +6,12 @@ const getIcon = (name: string) => <Iconify icon={name} />
 const navConfig = [
   {
     title: 'dashboard',
-    path: '/dashboard/app',
+    path: '/',
     icon: getIcon('eva:pie-chart-2-fill'),
   },
   {
     title: 'user',
-    path: '/dashboard/user',
+    path: '/account',
     icon: getIcon('eva:people-fill'),
   },
   {

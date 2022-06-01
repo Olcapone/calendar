@@ -24,10 +24,11 @@ const ListItemIconStyle = styled(ListItemIcon)({
 
 type NavItemProps = {
   item: NavItemType
-  active: any
+  active: any,
+  handleClick: () => void
 }
 
-const NavItem = ({ item, active }: NavItemProps) => {
+const NavItem = ({ item, active, handleClick }: NavItemProps) => {
   const theme = useTheme()
   const { title, path, icon, info } = item
 
@@ -35,7 +36,7 @@ const NavItem = ({ item, active }: NavItemProps) => {
 
   const [open, setOpen] = useState<boolean>(isActiveRoot)
 
-  const handleOpen = () => setOpen((prev) => !prev)
+  //const handleOpen = () => setOpen((prev) => !prev)
 
   const activeRootStyle = {
     color: 'primary.main',
@@ -45,7 +46,7 @@ const NavItem = ({ item, active }: NavItemProps) => {
 
     return (
         <ListItemStyle
-          onClick={handleOpen}
+          onClick={handleClick}
           sx={{ ...(isActiveRoot && activeRootStyle) }}
         >
           <ListItemIconStyle>{icon && icon}</ListItemIconStyle>
